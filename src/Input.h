@@ -10,6 +10,7 @@ public:
     static const bool AButton();
     static const bool BButton();
     static const bool CButton();
+    static const bool DButton();
 };
 
 #endif // INPUT_H

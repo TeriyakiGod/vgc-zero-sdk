@@ -11,3 +11,4 @@ const Vector2 Input::JoystickVector()
 const bool Input::AButton() { return IsKeyDown(KEY_ONE); }
 const bool Input::BButton() { return IsKeyDown(KEY_TWO); }
 const bool Input::CButton() { return IsKeyDown(KEY_THREE); }
+const bool Input::DButton() { return IsKeyDown(KEY_SPACE); }
