@@ -1,11 +1,10 @@
-#include "Game.h"
-#include "ExampleScene.h"
+#include "Game.hpp"
+#include "ExampleScene.hpp"
 #include <memory>
 
 int main()
 {
     Game game;
-    game.Init();
 
     auto exampleScene = std::make_shared<ExampleScene>();
 
@@ -13,6 +12,7 @@ int main()
 
     game.setActiveScene(0);
 
+    game.Init();
     game.Run();
     game.Cleanup();
     return 0;
