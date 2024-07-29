@@ -5,7 +5,8 @@ find_package(raylib REQUIRED)
 
 set(CMAKE_CXX_STANDARD 11)
 
-file(GLOB SOURCES "src/*.cpp")
+file(GLOB SOURCES "src/main.cpp" "src/engine/*.cpp" "src/game/*.cpp")
+include_directories("src/engine" "src/game")
 
 add_executable(${PROJECT_NAME} ${SOURCES})
 
