@@ -1,11 +1,15 @@
-#include "ExampleScene.h"
-#include "Text.h"
-#include "Input.h"
+#include "ExampleScene.hpp"
+#include "Input.hpp"
 
 class InputTest : public GameObject
 {
 public:
     InputTest(int layerIndex = 0) : GameObject(layerIndex) {}
+
+    void init() override
+    {
+        // init
+    }
 
     void update() override
     {
@@ -38,10 +42,5 @@ private:
 
 ExampleScene::ExampleScene()
 {
-    auto text = std::make_shared<Text>("Example scene", GetScreenWidth() / 2.0f, 110, 17, BLACK,
-                                       HorizontalAlignment::CENTER, VerticalAlignment::MIDDLE, 0);
-    addObject(text);
-
-    auto inputTest = std::make_shared<InputTest>(0);
-    addObject(inputTest);
+    addObject(std::make_shared<InputTest>());
 }

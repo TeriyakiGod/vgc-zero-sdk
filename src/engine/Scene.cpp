@@ -1,4 +1,12 @@
-#include "Scene.h"
+#include "Scene.hpp"
+
+void Scene::init()
+{
+    for (auto &object : objects)
+    {
+        object->init();
+    }
+}
 
 void Scene::update()
 {

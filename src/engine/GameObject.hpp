@@ -4,6 +4,8 @@
 class GameObject
 {
 public:
+    virtual ~GameObject() = default;
+    virtual void init() = 0;
     virtual void update() = 0;
     virtual void draw() = 0;
     int getLayerIndex() const { return layerIndex; }

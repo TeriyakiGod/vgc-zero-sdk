@@ -1,17 +1,24 @@
-#include "Game.h"
-#include "raylib.h"
+#include "Game.hpp"
+#include "raylib-cpp.hpp"
 
-Game::Game() {}
+Game::Game()
+    : window(SCREEN_WIDTH, SCREEN_HEIGHT, WINDOW_TITLE)
+{
+    // Constructor
+}
 
 void Game::Init()
 {
-    InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, WINDOW_TITLE);
     SetTargetFPS(TARGET_FPS);
+    for (auto &scene : scenes)
+    {
+        scene->init();
+    }
 }
 
 void Game::Run()
 {
-    while (!WindowShouldClose())
+    while (!window.ShouldClose())
     {
         Update();
         Draw();
@@ -41,7 +48,7 @@ void Game::Draw()
 
 void Game::Cleanup()
 {
-    CloseWindow();
+    window.Close(); // This will automatically call CloseWindow
 }
 
 void Game::addScene(std::shared_ptr<Scene> scene)

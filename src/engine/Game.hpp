@@ -1,10 +1,11 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include "Scene.h"
-#include "Input.h"
+#include "Scene.hpp"
+#include "Input.hpp"
 #include <memory>
 #include <vector>
+#include <raylib-cpp.hpp>
 
 class Game
 {
@@ -25,6 +26,8 @@ private:
     const char *WINDOW_TITLE = "Game";
     const int TARGET_FPS = 30;
     const bool DRAW_FPS = true;
+
+    raylib::Window window;
     std::vector<std::shared_ptr<Scene>> scenes;
     std::shared_ptr<Scene> activeScene;
 };
